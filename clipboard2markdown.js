@@ -91,7 +91,7 @@
       filter: 'li',
       replacement: function (content, node) {
         content = content.replace(/^\s+/, '').replace(/\n/gm, '\n    ');
-        var prefix = '-   ';
+        var prefix = '*   ';
         var parent = node.parentNode;
 
         if (/ol/i.test(parent.nodeName)) {
@@ -127,7 +127,7 @@
   };
 
   var convert = function (str) {
-    return escape(toMarkdown(str, { converters: pandoc, codeBlockStyle: 'fenced', gfm: true }));
+    return escape(toMarkdown(str, { converters: pandoc, gfm: true }));
   }
 
   var insert = function (myField, myValue) {
