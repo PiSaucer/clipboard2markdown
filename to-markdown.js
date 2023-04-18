@@ -452,7 +452,7 @@ module.exports = [
   {
     filter: 'hr',
     replacement: function () {
-      return '\n\n* * *\n\n'
+      return '\n\n---\n\n'
     }
   },
 
@@ -510,7 +510,7 @@ module.exports = [
       return node.nodeName === 'PRE' && node.firstChild.nodeName === 'CODE'
     },
     replacement: function (content, node) {
-      return '\n\n```' + node.firstChild.textContent.replace(/\n/g, '\n```') + '\n\n'
+      return '\n\n    ' + node.firstChild.textContent.replace(/\n/g, '\n    ') + '\n\n'
     }
   },
 
